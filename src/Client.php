@@ -109,6 +109,9 @@ class Client
                 'Ocp-Apim-Subscription-Key' => $this->subscriptionKey,
             ],
         ]);
+        if ($response->getStatusCode() !== 200) {
+            throw new \RuntimeException('Failed to get the analyze result.');
+        }
         return AnalyzeResultOperation::fromArray(json_decode($response->getBody()->getContents(), true));
     }
 }
