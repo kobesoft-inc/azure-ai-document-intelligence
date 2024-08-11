@@ -11,7 +11,7 @@ use Kobesoft\AzureAiDocumentIntelligence\Result\AnalyzeResultOperation;
 class Client
 {
     /**
-     * コンストラクタ
+     * インスタンスを生成する。
      *
      * @param string $endpoint エンドポイントURL
      * @param string $subscriptionKey サブスクリプションキー
@@ -99,7 +99,7 @@ class Client
      *
      * @param $resultUrl string 解析結果のURL
      * @return AnalyzeResultOperation
-     * @throws GuzzleException|\ReflectionException
+     * @throws GuzzleException
      */
     public function analyzeResult(string $resultUrl): AnalyzeResultOperation
     {
@@ -109,9 +109,6 @@ class Client
                 'Ocp-Apim-Subscription-Key' => $this->subscriptionKey,
             ],
         ]);
-        return Supports\ArrayMapper::map(
-            json_decode($response->getBody()->getContents(), true),
-            AnalyzeResultOperation::class
-        );
+        return AnalyzeResultOperation::fromArray(json_decode($response->getBody()->getContents(), true));
     }
 }

@@ -2,13 +2,17 @@
 
 namespace Kobesoft\AzureAiDocumentIntelligence\Result;
 
+use Kobesoft\AzureAiDocumentIntelligence\Traits\FromArray;
+
 /**
  * フィールド値の内容と場所を表す オブジェクト
  */
 class DocumentField
 {
+    use FromArray;
+
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\BoundingRegion>|null フィールドをカバーする境界領域。
+     * @var array<BoundingRegion>|null フィールドをカバーする境界領域。
      */
     public ?array $boundingRegions = null;
 
@@ -23,7 +27,7 @@ class DocumentField
     public ?string $content = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentSpan>|null 読み取り順序の連結されたコンテンツ内のフィールドの場所。
+     * @var array<DocumentSpan>|null 読み取り順序の連結されたコンテンツ内のフィールドの場所。
      */
     public ?array $spans = null;
 
@@ -38,7 +42,7 @@ class DocumentField
     public ?AddressValue $valueAddress = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentField>|null フィールド値の配列。
+     * @var array<DocumentField>|null フィールド値の配列。
      */
     public ?array $valueArray = null;
 
@@ -88,7 +92,7 @@ class DocumentField
     public ?string $valueSelectionMark = null;
 
     /**
-     * @var Kobesoft\AzureAiDocumentIntelligence\Result\DocumentSpan|null 署名の存在。
+     * @var DocumentSpan|null 署名の存在。
      */
     public ?DocumentSpan $valueSignature = null;
 

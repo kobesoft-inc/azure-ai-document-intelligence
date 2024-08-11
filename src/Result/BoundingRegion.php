@@ -2,11 +2,15 @@
 
 namespace Kobesoft\AzureAiDocumentIntelligence\Result;
 
+use Kobesoft\AzureAiDocumentIntelligence\Traits\FromArray;
+
 /**
  * 入力の特定のページの境界ポリゴン
  */
 class BoundingRegion
 {
+    use FromArray;
+
     /**
      * @var int|null 境界領域を含む 1 から始まるページ番号。
      */

@@ -2,13 +2,17 @@
 
 namespace Kobesoft\AzureAiDocumentIntelligence\Result;
 
+use Kobesoft\AzureAiDocumentIntelligence\Traits\FromArray;
+
 /**
  * 分析操作の状態と結果
  */
 class AnalyzeResultOperation
 {
+    use FromArray;
+
     /**
-     * @var Kobesoft\AzureAiDocumentIntelligence\Result\AnalyzeResult|null ドキュメント分析結果。
+     * @var AnalyzeResult|null ドキュメント分析結果。
      */
     public ?AnalyzeResult $analyzeResult = null;
 
@@ -18,7 +22,7 @@ class AnalyzeResultOperation
     public ?string $createdDateTime = null;
 
     /**
-     * @var Kobesoft\AzureAiDocumentIntelligence\Result\Error|null ドキュメント分析中にエラーが発生しました。
+     * @var Error|null ドキュメント分析中にエラーが発生しました。
      */
     public ?Error $error = null;
 

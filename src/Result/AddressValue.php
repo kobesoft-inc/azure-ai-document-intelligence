@@ -2,11 +2,15 @@
 
 namespace Kobesoft\AzureAiDocumentIntelligence\Result;
 
+use Kobesoft\AzureAiDocumentIntelligence\Traits\FromArray;
+
 /**
  * アドレス フィールドの値
  */
 class AddressValue
 {
+    use FromArray;
+
     /**
      * @var string|null 市、町、村などの名前。
      */

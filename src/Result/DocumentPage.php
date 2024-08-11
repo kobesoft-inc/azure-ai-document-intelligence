@@ -2,23 +2,27 @@
 
 namespace Kobesoft\AzureAiDocumentIntelligence\Result;
 
+use Kobesoft\AzureAiDocumentIntelligence\Traits\FromArray;
+
 /**
  * 入力からページから抽出されたコンテンツ要素とレイアウト要素
  */
 class DocumentPage
 {
+    use FromArray;
+
     /**
      * @var float|null 時計回りの方向のコンテンツの一般的な向き(-180,180]の間の度数で測定されます。
      */
     public ?float $angle = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentBarcode>|null ページからバーコードを抽出しました。
+     * @var array<DocumentBarcode>|null ページからバーコードを抽出しました。
      */
     public ?array $barcodes = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentFormula>|null ページから抽出された数式。
+     * @var array<DocumentFormula>|null ページから抽出された数式。
      */
     public ?array $formulas = null;
 
@@ -28,7 +32,7 @@ class DocumentPage
     public ?float $height = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentLine>|null ページから抽出された行。テキスト要素とビジュアル要素の両方を含む可能性があります。
+     * @var array<DocumentLine>|null ページから抽出された行。テキスト要素とビジュアル要素の両方を含む可能性があります。
      */
     public ?array $lines = null;
 
@@ -38,12 +42,12 @@ class DocumentPage
     public ?int $pageNumber = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentSelectionMark>|null ページから抽出された選択マーク。
+     * @var array<DocumentSelectionMark>|null ページから抽出された選択マーク。
      */
     public ?array $selectionMarks = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentSpan>|null 読み取り順序の連結されたコンテンツ内のページの場所。
+     * @var array<DocumentSpan>|null 読み取り順序の連結されたコンテンツ内のページの場所。
      */
     public ?array $spans = null;
 
@@ -58,7 +62,7 @@ class DocumentPage
     public ?float $width = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentWord>|null ページから抽出された単語。
+     * @var array<DocumentWord>|null ページから抽出された単語。
      */
     public ?array $words = null;
 }

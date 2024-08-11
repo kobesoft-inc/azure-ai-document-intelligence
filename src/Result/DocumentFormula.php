@@ -2,11 +2,15 @@
 
 namespace Kobesoft\AzureAiDocumentIntelligence\Result;
 
+use Kobesoft\AzureAiDocumentIntelligence\Traits\FromArray;
+
 /**
  * 数式オブジェクト
  */
 class DocumentFormula
 {
+    use FromArray;
+
     /**
      * @var float|null 数式を正しく抽出する信頼度。
      */

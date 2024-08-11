@@ -2,11 +2,15 @@
 
 namespace Kobesoft\AzureAiDocumentIntelligence\Result;
 
+use Kobesoft\AzureAiDocumentIntelligence\Traits\FromArray;
+
 /**
  * 通貨フィールドの値
  */
 class CurrencyValue
 {
+    use FromArray;
+
     /**
      * @var float|null 通貨金額。
      */

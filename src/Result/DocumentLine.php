@@ -2,11 +2,15 @@
 
 namespace Kobesoft\AzureAiDocumentIntelligence\Result;
 
+use Kobesoft\AzureAiDocumentIntelligence\Traits\FromArray;
+
 /**
  * 単語や選択マークなど、コンテンツ要素の隣接するシーケンスで構成されるコンテンツ行オブジェクト
  */
 class DocumentLine
 {
+    use FromArray;
+
     /**
      * @var string|null 読み取り順に含まれる要素の連結されたコンテンツ。
      */
@@ -18,7 +22,7 @@ class DocumentLine
     public ?array $polygon = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentSpan>|null 読み取り順序の連結されたコンテンツ内の行の場所。
+     * @var array<DocumentSpan>|null 読み取り順序の連結されたコンテンツ内の行の場所。
      */
     public ?array $spans = null;
 }

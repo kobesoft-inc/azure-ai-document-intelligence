@@ -2,11 +2,15 @@
 
 namespace Kobesoft\AzureAiDocumentIntelligence\Result;
 
+use Kobesoft\AzureAiDocumentIntelligence\Traits\FromArray;
+
 /**
  * 個別のフィールド ラベル (キー) とフィールド値 (空の場合があります) を持つフォーム フィールドを表す オブジェクト
  */
 class DocumentKeyValuePair
 {
+    use FromArray;
+
     /**
      * @var float|null キーと値のペアを正しく抽出する信頼度。
      */

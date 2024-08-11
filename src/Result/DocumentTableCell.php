@@ -2,13 +2,17 @@
 
 namespace Kobesoft\AzureAiDocumentIntelligence\Result;
 
+use Kobesoft\AzureAiDocumentIntelligence\Traits\FromArray;
+
 /**
  * テーブル セルの場所と内容を表す オブジェクト
  */
 class DocumentTableCell
 {
+    use FromArray;
+
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\BoundingRegion>|null テーブル セルをカバーする境界領域。
+     * @var array<BoundingRegion>|null テーブル セルをカバーする境界領域。
      */
     public ?array $boundingRegions = null;
 
@@ -43,7 +47,7 @@ class DocumentTableCell
     public ?int $rowSpan = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentSpan>|null 読み取り順序の連結されたコンテンツ内のテーブル セルの場所。
+     * @var array<DocumentSpan>|null 読み取り順序の連結されたコンテンツ内のテーブル セルの場所。
      */
     public ?array $spans = null;
 }

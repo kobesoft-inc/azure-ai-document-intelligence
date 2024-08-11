@@ -2,11 +2,15 @@
 
 namespace Kobesoft\AzureAiDocumentIntelligence\Result;
 
+use Kobesoft\AzureAiDocumentIntelligence\Traits\FromArray;
+
 /**
  * ドキュメント分析結果
  */
 class AnalyzeResult
 {
+    use FromArray;
+
     /**
      * @var string|null この結果を生成するために使用される API バージョン。
      */
@@ -18,17 +22,17 @@ class AnalyzeResult
     public ?string $content = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\Document>|null 抽出されたドキュメント。
+     * @var array<Document>|null 抽出されたドキュメント。
      */
     public ?array $documents = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentKeyValuePair>|null 抽出されたキーと値のペア。
+     * @var array<DocumentKeyValuePair>|null 抽出されたキーと値のペア。
      */
     public ?array $keyValuePairs = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentLanguage>|null 検出された言語。
+     * @var array<DocumentLanguage>|null 検出された言語。
      */
     public ?array $languages = null;
 
@@ -38,12 +42,12 @@ class AnalyzeResult
     public ?string $modelId = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentPage>|null 分析されたページ。
+     * @var array<DocumentPage>|null 分析されたページ。
      */
     public ?array $pages = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentParagraph>|null 抽出された段落。
+     * @var array<DocumentParagraph>|null 抽出された段落。
      */
     public ?array $paragraphs = null;
 
@@ -53,12 +57,12 @@ class AnalyzeResult
     public ?string $stringIndexType = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentStyle>|null 抽出されたフォント スタイル。
+     * @var array<DocumentStyle>|null 抽出されたフォント スタイル。
      */
     public ?array $styles = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentTable>|null 抽出されたテーブル。
+     * @var array<DocumentTable>|null 抽出されたテーブル。
      */
     public ?array $tables = null;
 }

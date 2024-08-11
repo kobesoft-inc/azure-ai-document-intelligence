@@ -2,11 +2,15 @@
 
 namespace Kobesoft\AzureAiDocumentIntelligence\Result;
 
+use Kobesoft\AzureAiDocumentIntelligence\Traits\FromArray;
+
 /**
  * バーコード オブジェクト
  */
 class DocumentBarcode
 {
+    use FromArray;
+
     /**
      * @var float|null バーコードを正しく抽出する信頼性。
      */
@@ -23,7 +27,7 @@ class DocumentBarcode
     public ?array $polygon = null;
 
     /**
-     * @var Kobesoft\AzureAiDocumentIntelligence\Result\DocumentSpan|null 読み取り順序の連結されたコンテンツ内のバーコードの場所。
+     * @var DocumentSpan|null 読み取り順序の連結されたコンテンツ内のバーコードの場所。
      */
     public ?DocumentSpan $span = null;
 

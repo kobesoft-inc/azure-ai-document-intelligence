@@ -2,13 +2,17 @@
 
 namespace Kobesoft\AzureAiDocumentIntelligence\Result;
 
+use Kobesoft\AzureAiDocumentIntelligence\Traits\FromArray;
+
 /**
  * ドキュメントの場所とセマンティック コンテンツを記述する オブジェクト
  */
 class Document
 {
+    use FromArray;
+
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\BoundingRegion>|null ドキュメントをカバーする境界領域。
+     * @var array<BoundingRegion>|null ドキュメントをカバーする境界領域。
      */
     public ?array $boundingRegions = null;
 
@@ -28,7 +32,7 @@ class Document
     public ?array $fields = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentSpan>|null 読み取り順序の連結されたコンテンツ内のドキュメントの場所。
+     * @var array<DocumentSpan>|null 読み取り順序の連結されたコンテンツ内のドキュメントの場所。
      */
     public ?array $spans = null;
 }

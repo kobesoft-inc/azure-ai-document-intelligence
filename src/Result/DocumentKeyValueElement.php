@@ -2,13 +2,17 @@
 
 namespace Kobesoft\AzureAiDocumentIntelligence\Result;
 
+use Kobesoft\AzureAiDocumentIntelligence\Traits\FromArray;
+
 /**
  * キーと値のペアのフィールド キーまたは値を表す オブジェクト
  */
 class DocumentKeyValueElement
 {
+    use FromArray;
+
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\BoundingRegion>|null キーと値の要素をカバーする境界領域。
+     * @var array<BoundingRegion>|null キーと値の要素をカバーする境界領域。
      */
     public ?array $boundingRegions = null;
 
@@ -18,7 +22,7 @@ class DocumentKeyValueElement
     public ?string $content = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentSpan>|null 読み取り順序の連結されたコンテンツ内のキーと値の要素の場所。
+     * @var array<DocumentSpan>|null 読み取り順序の連結されたコンテンツ内のキーと値の要素の場所。
      */
     public ?array $spans = null;
 }

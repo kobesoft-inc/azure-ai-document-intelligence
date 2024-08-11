@@ -2,11 +2,15 @@
 
 namespace Kobesoft\AzureAiDocumentIntelligence\Result;
 
+use Kobesoft\AzureAiDocumentIntelligence\Traits\FromArray;
+
 /**
  * 特定のテキスト スパンで検出された言語を表す オブジェクト
  */
 class DocumentLanguage
 {
+    use FromArray;
+
     /**
      * @var float|null 言語を正しく識別する信頼度。
      */
@@ -18,7 +22,7 @@ class DocumentLanguage
     public ?string $locale = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentSpan>|null 言語が適用される連結コンテンツ内のテキスト要素の場所。
+     * @var array<DocumentSpan>|null 言語が適用される連結コンテンツ内のテキスト要素の場所。
      */
     public ?array $spans = null;
 }

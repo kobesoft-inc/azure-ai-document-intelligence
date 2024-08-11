@@ -2,11 +2,15 @@
 
 namespace Kobesoft\AzureAiDocumentIntelligence\Result;
 
+use Kobesoft\AzureAiDocumentIntelligence\Traits\FromArray;
+
 /**
  * 観察されたテキスト スタイルを表す オブジェクト
  */
 class DocumentStyle
 {
+    use FromArray;
+
     /**
      * @var string|null 16 進数形式の背景色 #rrggbb。
      */
@@ -43,7 +47,7 @@ class DocumentStyle
     public ?string $similarFontFamily = null;
 
     /**
-     * @var array<Kobesoft\AzureAiDocumentIntelligence\Result\DocumentSpan>|null スタイルが適用される連結コンテンツ内のテキスト要素の場所。
+     * @var array<DocumentSpan>|null スタイルが適用される連結コンテンツ内のテキスト要素の場所。
      */
     public ?array $spans = null;
 }

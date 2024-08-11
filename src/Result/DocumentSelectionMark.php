@@ -2,11 +2,15 @@
 
 namespace Kobesoft\AzureAiDocumentIntelligence\Result;
 
+use Kobesoft\AzureAiDocumentIntelligence\Traits\FromArray;
+
 /**
  * チェック ボックス、ラジオ ボタン、および選択範囲を示すその他の要素を表す選択マーク オブジェクト
  */
 class DocumentSelectionMark
 {
+    use FromArray;
+
     /**
      * @var float|null 選択マークを正しく抽出する信頼度。
      */
@@ -18,7 +22,7 @@ class DocumentSelectionMark
     public ?array $polygon = null;
 
     /**
-     * @var Kobesoft\AzureAiDocumentIntelligence\Result\DocumentSpan|null 読み取り順序の連結されたコンテンツ内の選択マークの位置。
+     * @var DocumentSpan|null 読み取り順序の連結されたコンテンツ内の選択マークの位置。
      */
     public ?DocumentSpan $span = null;
 

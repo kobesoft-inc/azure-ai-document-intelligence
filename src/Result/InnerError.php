@@ -2,11 +2,15 @@
 
 namespace Kobesoft\AzureAiDocumentIntelligence\Result;
 
+use Kobesoft\AzureAiDocumentIntelligence\Traits\FromArray;
+
 /**
  * 詳細なエラー
  */
 class InnerError
 {
+    use FromArray;
+
     /**
      * @var string|null エラー コード。
      */
