@@ -77,7 +77,7 @@ class DocumentField
     public ?float $valueNumber = null;
 
     /**
-     * @var array<string,Kobesoft\AzureAiDocumentIntelligence\Result\DocumentField>|null 名前付きフィールド値のディクショナリ。
+     * @var array<DocumentField>|null 名前付きフィールド値のディクショナリ。
      */
     public ?array $valueObject = null;
 
